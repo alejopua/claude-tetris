@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1828 358" width="2048" height="401" role="img" aria-label="TETRIS">
+  <title>TETRIS</title>
+  <defs>
+    <!-- Bloque biselado 64x64: caras laterales oscuras, brillo, sombra interior -->
+    <g id="t">
+      <polygon fill="currentColor" points="10,1 54,1 63,10 63,54 54,63 10,63 1,54 1,10"/>
+      <polygon fill="#fff" fill-opacity=".42" points="10,1 54,1 51,13 13,13"/>
+      <polygon fill="#fff" fill-opacity=".18" points="1,10 10,1 13,13 13,51 10,63 1,54"/>
+      <polygon fill="#000" fill-opacity=".30" points="63,10 63,54 54,63 51,51 51,13 54,1"/>
+      <polygon fill="#000" fill-opacity=".50" points="10,63 54,63 51,51 13,51"/>
+      <rect x="13" y="13" width="38" height="38" fill="none" stroke="#000" stroke-opacity=".28" stroke-width="2.5"/>
+      <rect x="18" y="17" width="16" height="5" rx="2.5" fill="#fff" fill-opacity=".85"/>
+    </g>
+
+    <!-- Siluetas de letra (para la extrusión) -->
+    <path id="pT" d="M0 0h320v64H0z M128 64h64v256h-64z"/>
+    <path id="pE" d="M0 0h64v320H0z M64 0h192v64H64z M64 128h128v64H64z M64 256h192v64H64z"/>
+    <path id="pR" d="M0 0h64v320H0z M64 0h128v64H64z M192 64h64v64h-64z M64 128h128v64H64z M128 192h64v64h-64z M192 256h64v64h-64z"/>
+    <path id="pI" d="M0 0h192v64H0z M64 64h64v192H64z M0 256h192v64H0z"/>
+    <path id="pS" d="M0 0h256v64H0z M0 64h64v64H0z M0 128h256v64H0z M192 192h64v64h-64z M0 256h256v64H0z"/>
+
+    <!-- Extrusión 3D: copias desplazadas de la silueta (color vía currentColor) -->
+    <g id="xT" fill="currentColor">
+      <use href="#pT" x="22" y="22"/><use href="#pT" x="19" y="19"/><use href="#pT" x="16" y="16"/><use href="#pT" x="13" y="13"/>
+      <use href="#pT" x="10" y="10"/><use href="#pT" x="7" y="7"/><use href="#pT" x="4" y="4"/><use href="#pT" x="1" y="1"/>
+    </g>
+    <g id="xE" fill="currentColor">
+      <use href="#pE" x="22" y="22"/><use href="#pE" x="19" y="19"/><use href="#pE" x="16" y="16"/><use href="#pE" x="13" y="13"/>
+      <use href="#pE" x="10" y="10"/><use href="#pE" x="7" y="7"/><use href="#pE" x="4" y="4"/><use href="#pE" x="1" y="1"/>
+    </g>
+    <g id="xR" fill="currentColor">
+      <use href="#pR" x="22" y="22"/><use href="#pR" x="19" y="19"/><use href="#pR" x="16" y="16"/><use href="#pR" x="13" y="13"/>
+      <use href="#pR" x="10" y="10"/><use href="#pR" x="7" y="7"/><use href="#pR" x="4" y="4"/><use href="#pR" x="1" y="1"/>
+    </g>
+    <g id="xI" fill="currentColor">
+      <use href="#pI" x="22" y="22"/><use href="#pI" x="19" y="19"/><use href="#pI" x="16" y="16"/><use href="#pI" x="13" y="13"/>
+      <use href="#pI" x="10" y="10"/><use href="#pI" x="7" y="7"/><use href="#pI" x="4" y="4"/><use href="#pI" x="1" y="1"/>
+    </g>
+    <g id="xS" fill="currentColor">
+      <use href="#pS" x="22" y="22"/><use href="#pS" x="19" y="19"/><use href="#pS" x="16" y="16"/><use href="#pS" x="13" y="13"/>
+      <use href="#pS" x="10" y="10"/><use href="#pS" x="7" y="7"/><use href="#pS" x="4" y="4"/><use href="#pS" x="1" y="1"/>
+    </g>
+
+    <!-- Letras hechas de bloques -->
+    <g id="lT">
+      <use href="#t" x="0"/><use href="#t" x="64"/><use href="#t" x="128"/><use href="#t" x="192"/><use href="#t" x="256"/>
+      <use href="#t" x="128" y="64"/><use href="#t" x="128" y="128"/><use href="#t" x="128" y="192"/><use href="#t" x="128" y="256"/>
+    </g>
+    <g id="lE">
+      <use href="#t" y="0"/><use href="#t" y="64"/><use href="#t" y="128"/><use href="#t" y="192"/><use href="#t" y="256"/>
+      <use href="#t" x="64"/><use href="#t" x="128"/><use href="#t" x="192"/>
+      <use href="#t" x="64" y="128"/><use href="#t" x="128" y="128"/>
+      <use href="#t" x="64" y="256"/><use href="#t" x="128" y="256"/><use href="#t" x="192" y="256"/>
+    </g>
+    <g id="lR">
+      <use href="#t" y="0"/><use href="#t" y="64"/><use href="#t" y="128"/><use href="#t" y="192"/><use href="#t" y="256"/>
+      <use href="#t" x="64"/><use href="#t" x="128"/>
+      <use href="#t" x="192" y="64"/>
+      <use href="#t" x="64" y="128"/><use href="#t" x="128" y="128"/>
+      <use href="#t" x="128" y="192"/>
+      <use href="#t" x="192" y="256"/>
+    </g>
+    <g id="lI">
+      <use href="#t"/><use href="#t" x="64"/><use href="#t" x="128"/>
+      <use href="#t" x="64" y="64"/><use href="#t" x="64" y="128"/><use href="#t" x="64" y="192"/>
+      <use href="#t" y="256"/><use href="#t" x="64" y="256"/><use href="#t" x="128" y="256"/>
+    </g>
+    <g id="lS">
+      <use href="#t"/><use href="#t" x="64"/><use href="#t" x="128"/><use href="#t" x="192"/>
+      <use href="#t" y="64"/>
+      <use href="#t" y="128"/><use href="#t" x="64" y="128"/><use href="#t" x="128" y="128"/><use href="#t" x="192" y="128"/>
+      <use href="#t" x="192" y="192"/>
+      <use href="#t" y="256"/><use href="#t" x="64" y="256"/><use href="#t" x="128" y="256"/><use href="#t" x="192" y="256"/>
+    </g>
+  </defs>
+
+  <!-- Caras de extrusión (detrás) -->
+  <use href="#xT" x="8"    y="8" color="#7a1c23"/>
+  <use href="#xE" x="366"  y="8" color="#7a4a0f"/>
+  <use href="#xT" x="660"  y="8" color="#7a6c0a"/>
+  <use href="#xR" x="1018" y="8" color="#17692d"/>
+  <use href="#xI" x="1312" y="8" color="#105c7a"/>
+  <use href="#xS" x="1542" y="8" color="#572e7a"/>
+
+  <!-- Caras frontales -->
+  <use href="#lT" x="8"    y="8" color="#ff3b47"/>
+  <use href="#lE" x="366"  y="8" color="#ff9a1f"/>
+  <use href="#lT" x="660"  y="8" color="#ffd814"/>
+  <use href="#lR" x="1018" y="8" color="#2fd65b"/>
+  <use href="#lI" x="1312" y="8" color="#20b9ff"/>
+  <use href="#lS" x="1542" y="8" color="#b45cff"/>
+</svg>
